@@ -1,0 +1,200 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+@source '../js/**/*.{js,jsx,ts,tsx}';
+
+@theme {
+    /* Color Palette: Editorial Cream + Gold + Black */
+    --color-black-main: #0E0D0B;
+    --color-black-soft: #181613;
+    --color-black-card: #201D19;
+    --color-black-elevated: #2A2621;
+    
+    --color-cream-main: #F7F3E9;
+    --color-cream-light: #FCFAF5;
+    --color-cream-dark: #EBE2D0;
+    --color-cream-muted: #D9CDBC;
+
+    --color-gold-main: #C5A059;
+    --color-gold-bright: #D4AF37;
+    --color-gold-light: #E4C87F;
+    --color-gold-dark: #98783B;
+    --color-gold-glow: #F3E5AB;
+
+    /* Legacy semantic mappings for backward safety */
+    --color-ivory: #F7F3E9;
+    --color-ivory-light: #FCFAF5;
+    --color-cream: #EBE2D0;
+    --color-deep-brown: #0E0D0B;
+    --color-soft-brown: #5C5248;
+    --color-muted-gold: #C5A059;
+
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-script: 'Alex Brush', cursive, serif;
+    --font-pinyon: 'Pinyon Script', cursive, serif;
+}
+
+/* Custom Base & Utilities */
+@layer base {
+    * {
+        border-color: rgba(197, 160, 89, 0.25);
+    }
+    
+    html {
+        font-family: var(--font-sans);
+        color: #0E0D0B;
+        background-color: #F7F3E9;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        overflow-x: hidden;
+        min-height: 100vh;
+        background-color: #F7F3E9;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+        font-family: var(--font-serif);
+    }
+}
+
+/* Typography Classes */
+.font-display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+}
+
+.font-editorial-caps {
+    font-family: var(--font-cinzel);
+    letter-spacing: 0.2em;
+}
+
+.font-signature {
+    font-family: var(--font-script);
+}
+
+.font-handwritten {
+    font-family: var(--font-pinyon);
+}
+
+/* Luxury Cream x Gold x Black Textures */
+.bg-cream-luxury {
+    background-color: #F7F3E9;
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(252, 250, 245, 0.8) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(197, 160, 89, 0.1) 0px, transparent 50%),
+        radial-gradient(rgba(14, 13, 11, 0.035) 1px, transparent 0);
+    background-size: 100% 100%, 100% 100%, 20px 20px;
+}
+
+.bg-black-luxury {
+    background-color: #0E0D0B;
+    background-image: 
+        radial-gradient(at 15% 15%, rgba(32, 29, 25, 0.7) 0px, transparent 60%),
+        radial-gradient(at 85% 85%, rgba(197, 160, 89, 0.08) 0px, transparent 50%),
+        radial-gradient(rgba(247, 243, 233, 0.02) 1px, transparent 0);
+    background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+.bg-paper-luxury {
+    background-color: #F7F3E9;
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(252, 250, 245, 0.9) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(197, 160, 89, 0.12) 0px, transparent 50%),
+        radial-gradient(rgba(14, 13, 11, 0.03) 1px, transparent 0);
+    background-size: 100% 100%, 100% 100%, 20px 20px;
+}
+
+/* Dutch Arch Frames */
+.arch-frame {
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+}
+
+.arch-frame-double {
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    position: relative;
+}
+
+.arch-frame-double::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    pointer-events: none;
+}
+
+/* Gold Gradient Text & Elements */
+.text-gold-gradient {
+    background: linear-gradient(135deg, #C5A059 0%, #E4C87F 50%, #98783B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.border-gold-glow {
+    border-color: rgba(197, 160, 89, 0.4);
+    box-shadow: 0 0 15px -3px rgba(197, 160, 89, 0.15);
+}
+
+/* Glassmorphism Styles */
+.glass-cream {
+    background: rgba(247, 243, 233, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(14, 13, 11, 0.1);
+}
+
+.glass-black {
+    background: rgba(14, 13, 11, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0E0D0B;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E4C87F;
+}
+
+/* Animations */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+}
+
+.paused {
+    animation-play-state: paused;
+}
