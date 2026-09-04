@@ -39,8 +39,8 @@ export default function BottomNavigation() {
     };
 
     return (
-        <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 max-w-sm sm:max-w-md w-[92%] glass-black rounded-full px-3 py-2 shadow-2xl transition-all border border-[#C5A059]/50">
-            <div className="flex items-center justify-between gap-1">
+        <nav className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] left-3 right-3 z-40 mx-auto max-w-md glass-black rounded-2xl px-2 py-2 shadow-2xl transition-all border border-[#C5A059]/50">
+            <div className="grid grid-cols-6 items-center gap-0.5">
                 {navItems.map((item) => {
                     const Icon = item.icon;
                     const isActive = activeSection === item.id;
@@ -49,14 +49,14 @@ export default function BottomNavigation() {
                         <button
                             key={item.id}
                             onClick={() => scrollTo(item.id)}
-                            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-full transition-all cursor-pointer ${
+                            className={`min-w-0 min-h-11 w-full flex flex-col items-center justify-center rounded-xl transition-colors cursor-pointer ${
                                 isActive
-                                    ? "text-[#E4C87F] font-semibold bg-[#2A2621] shadow-md scale-105 border border-[#C5A059]/40"
+                                    ? "text-[#E4C87F] font-semibold bg-[#2A2621] shadow-md border border-[#C5A059]/40"
                                     : "text-[#EBE2D0]/70 hover:text-[#FCFAF5] hover:opacity-100"
                             }`}
                         >
                             <Icon className={`w-4 h-4 transition-transform ${isActive ? "text-[#E4C87F]" : ""}`} />
-                            <span className="text-[9px] uppercase tracking-wider mt-0.5 font-sans">
+                            <span className="max-[370px]:text-[7px] text-[8px] sm:text-[9px] uppercase tracking-normal sm:tracking-wider mt-0.5 font-sans whitespace-nowrap">
                                 {item.label}
                             </span>
                         </button>

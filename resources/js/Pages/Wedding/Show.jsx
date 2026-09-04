@@ -161,7 +161,7 @@ export default function Show({ invitation, guestName, wishes = [], meta }) {
             />
 
             {/* Main Invitation Layout */}
-            <main className={`transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'}`}>
+            <main className={`pb-28 sm:pb-24 transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'}`}>
                 {/* 02. Hero Section */}
                 <HeroSection invitation={invitation} />
 

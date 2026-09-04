@@ -61,4 +61,16 @@ class InvitationTest extends TestCase
             'message' => 'Turut berbahagia untuk kalian berdua!',
         ]);
     }
+
+    public function test_mobile_bottom_navigation_uses_six_equal_columns_and_safe_area(): void
+    {
+        $navigation = file_get_contents(resource_path('js/Components/Wedding/BottomNavigation.jsx'));
+        $page = file_get_contents(resource_path('js/Pages/Wedding/Show.jsx'));
+
+        $this->assertStringContainsString('grid grid-cols-6', $navigation);
+        $this->assertStringContainsString('min-w-0 min-h-11', $navigation);
+        $this->assertStringContainsString("bottom-[calc(0.75rem+env(safe-area-inset-bottom))]", $navigation);
+        $this->assertStringNotContainsString('scale-105', $navigation);
+        $this->assertStringContainsString('pb-28 sm:pb-24', $page);
+    }
 }
