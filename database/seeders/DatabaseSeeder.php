@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'hero_image' => '/images/wedding/Hero-Section.jpeg',
             'cover_image' => '/images/wedding/cover.jpeg',
             'og_image' => '/images/wedding/Hero-Section.jpeg',
-            'background_video_url' => '/stream/video/background.mp4',
+            'background_video_url' => '/videos/wedding/background.mp4',
             'theme_settings' => [
                 'primary_theme' => 'classic-noni-belanda',
                 'palette' => 'ivory-gold-deepbrown',
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
             'hero_image' => '/images/wedding/Hero-Section.jpeg',
             'cover_image' => '/images/wedding/cover.jpeg',
             'og_image' => '/images/wedding/Hero-Section.jpeg',
-            'background_video_url' => '/stream/video/background.mp4',
+            'background_video_url' => '/videos/wedding/background.mp4',
             'is_active' => true,
         ]);
 
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
             'hero_image' => '/images/wedding/hero.jpg',
             'cover_image' => '/images/wedding/cover.jpeg',
             'og_image' => '/images/wedding/hero.jpg',
-            'background_video_url' => '/stream/video/background.mp4',
+            'background_video_url' => '/videos/wedding/background.mp4',
             'is_active' => true,
         ]);
 
